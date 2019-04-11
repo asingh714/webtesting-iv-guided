@@ -2,12 +2,11 @@
 
 // fake creds
 const localPg = {
-  host: "localhost",
-  database: "hobbits",
-  user: "student",
-  password: "hired"
+  host: 'localhost',
+  database: 'hobbits',
+  user: 'student',
+  password: 'hired',
 };
-
 const productionDbConnection = process.env.DATABASE_URL || localPg;
 
 module.exports = {
@@ -38,13 +37,13 @@ module.exports = {
     }
   },
   production: {
-    client: "pg",
-    connect: productionDbConnection, // could be an object or a string
+    client: 'pg',
+    connection: productionDbConnection, // could be an object or a string
     migrations: {
-      directory: "./data/migrations"
+      directory: './data/migrations',
     },
     seeds: {
-      directory: "./data/seeds"
-    }
-  }
+      directory: './data/seeds',
+    },
+  },
 };
